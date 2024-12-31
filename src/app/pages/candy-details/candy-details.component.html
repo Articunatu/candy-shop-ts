@@ -1,0 +1,19 @@
+<div class="modal fade" id="candyDetailsModal" tabindex="-1" aria-labelledby="candyDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="candyDetailsModalLabel">{{ selectedCandy?.title }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img [src]="selectedCandy?.imageUrl" alt="Candy Image" class="img-fluid mb-3"/>
+          {{ selectedCandy?.description }}
+          <h4>{{ selectedCandy?.price }} kr</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-candy" (click)="addToCart(selectedCandy?)">Add to Cart</button> -->
+        </div>
+      </div>
+    </div>
+  </div>

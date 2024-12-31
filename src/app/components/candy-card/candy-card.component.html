@@ -1,0 +1,10 @@
+<div class="col-sm-4 col-md-3 col-lg-3 mb-4 mr-4">
+  <div class="card">
+    <img [src]="candy.imageThumbnailUrl" class="card-img-top" alt="Image for {{ candy.title }}" />
+    <div class="card-body">
+      <h3 class="card-title">{{ candy.title }}</h3>
+      <h4 class="card-text pull-right">{{ candy.price }} kr</h4>
+      <button class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+</div>

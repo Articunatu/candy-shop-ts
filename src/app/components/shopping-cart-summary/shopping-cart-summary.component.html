@@ -1,0 +1,9 @@
+
+<li *ngIf="itemsCount > 0">
+    <button (click)="shoppingCart">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <span id="cart-status">
+            {{itemsCount}}
+        </span>
+    </button>
+</li>

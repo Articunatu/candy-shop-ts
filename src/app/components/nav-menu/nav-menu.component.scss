@@ -1,0 +1,23 @@
+.navbar {
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    z-index: 1000;
+    .nav-link {
+      color: #ddd;
+      transition: color 0.3s ease;
+  
+      &:hover,
+      &.active {
+        color: #ffffff;
+        font-weight: bold;
+        border-bottom: 2px solid #ffffff;
+      }
+    }
+  
+    &.bg-dark {
+      background-color: #343a40;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+  

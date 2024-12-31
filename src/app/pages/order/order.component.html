@@ -1,0 +1,110 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="firstName" class="col-md-2">Förnamn</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      name="firstName" 
+      [(ngModel)]="user.firstName" 
+      required 
+      maxlength="255" 
+      #firstName="ngModel">
+    <div *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+      <small *ngIf="firstName.errors?.['required']">Förnamn är obligatoriskt.</small>
+      <small *ngIf="firstName.errors?.['maxlength']">Max längd är 255 tecken.</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastName" class="col-md-2">Efternamn</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      name="lastName" 
+      [(ngModel)]="user.lastName" 
+      required 
+      maxlength="255" 
+      #lastName="ngModel">
+    <div *ngIf="lastName.invalid && lastName.touched" class="text-danger">
+      <small *ngIf="lastName.errors?.['required']">Efternamn är obligatoriskt.</small>
+      <small *ngIf="lastName.errors?.['maxlength']">Max längd är 255 tecken.</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="address" class="col-md-2">Adress</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      name="address" 
+      [(ngModel)]="user.address" 
+      required 
+      maxlength="255" 
+      #address="ngModel">
+    <div *ngIf="address.invalid && address.touched" class="text-danger">
+      <small *ngIf="address.errors?.['required']">Adress är obligatorisk.</small>
+      <small *ngIf="address.errors?.['maxlength']">Max längd är 255 tecken.</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="zipCode" class="col-md-2">Postnummer</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      name="zipCode" 
+      [(ngModel)]="user.zipCode" 
+      required 
+      maxlength="6" 
+      #zipCode="ngModel">
+    <div *ngIf="zipCode.invalid && zipCode.touched" class="text-danger">
+      <small *ngIf="zipCode.errors?.['required']">Postnummer är obligatoriskt.</small>
+      <small *ngIf="zipCode.errors?.['maxlength']">Max längd är 6 tecken.</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="city" class="col-md-2">Stad</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      name="city" 
+      [(ngModel)]="user.city" 
+      required 
+      maxlength="255" 
+      #city="ngModel">
+    <div *ngIf="city.invalid && city.touched" class="text-danger">
+      <small *ngIf="city.errors?.['required']">Stad är obligatorisk.</small>
+      <small *ngIf="city.errors?.['maxlength']">Max längd är 255 tecken.</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="eMail" class="col-md-2">E-Post</label>
+    <input 
+      type="email" 
+      class="form-control" 
+      name="eMail" 
+      [(ngModel)]="user.eMail" 
+      required 
+      maxlength="255" 
+      email 
+      #email="ngModel">
+    <div *ngIf="email.invalid && email.touched" class="text-danger">
+      <small *ngIf="email.errors?.['required']">E-postadress är obligatorisk.</small>
+      <small *ngIf="email.errors?.['maxlength']">Max längd är 255 tecken.</small>
+      <small *ngIf="email.errors?.['email']">Ogiltig e-postadress.</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="phoneNumber" class="col-md-2">Telefonnummer</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      name="phoneNumber" 
+      [(ngModel)]="user.phoneNumber" 
+      maxlength="255" 
+      #phoneNumber="ngModel">
+    <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="text-danger">
+      <small *ngIf="phoneNumber.errors?.['maxlength']">Max längd är 255 tecken.</small>
+    </div>
+  </div>
+  <div class="col-md-offset-2 col-md-5">
+    <button class="btn btn-success" type="submit" [disabled]="!form.valid">SKICKA</button>
+  </div>
+</form>
